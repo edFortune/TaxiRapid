@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.cloryse.taxirapid.RegistrationActivity">
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRATION"
+        android:textSize="20dp"
+        android:layout_gravity="center"
+
+    <EditText
+        android:id="@+id/Nom"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_marginTop="20dp"
+        android:hint="Nom"
+        android:textSize="20dp"
+
+        />
+
+    <EditText
+        android:id="@+id/Prenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Prenom"
+        android:textSize="20dp"
+
+        />
+
+
+    <EditText
+        android:id="@+id/Plaque_immatriculation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Plaque d'immatriculation"
+        android:textSize="20dp"
+
+        />
+
+    <EditText
+        android:id="@+id/Marque_vehicule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Marque du Vehicule"
+        android:textSize="20dp"
+
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrer"
+        android:layout_gravity="center"
+
+        />
+
+
+</LinearLayout>
