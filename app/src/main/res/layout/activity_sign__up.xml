@@ -120,7 +120,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imgView_userIcon"
                     android:background="@color/editTextBG"
-                    android:hint="Username"
+                    android:hint="Name"
                     android:paddingLeft="20dp"
                     android:textSize="15sp" />
 
