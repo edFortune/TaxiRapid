@@ -120,7 +120,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imgView_userIcon"
                     android:background="@color/editTextBG"
-                    android:hint="Username"
+                    android:hint="Name"
                     android:paddingLeft="20dp"
                     android:textSize="15sp" />
 
@@ -146,6 +146,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/editTxt_passwd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_passwordIcon"
@@ -178,6 +179,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/editTxt_mail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_emailIcon"
