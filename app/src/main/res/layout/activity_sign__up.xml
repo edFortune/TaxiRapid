@@ -202,7 +202,8 @@
                 android:background="@color/colorPrimary"
                 android:fontFamily="sans-serif-medium"
                 android:text="SIGN UP"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:onClick="startSignUp"/>
 
             <Button
                 android:layout_width="wrap_content"

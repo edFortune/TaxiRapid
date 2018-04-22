@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class Sign_UpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign__up);
+
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
         mEmail = findViewById(R.id.editTxt_mail);
         mPassword = findViewById(R.id.editTxt_passwd);
