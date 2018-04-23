@@ -1,4 +1,4 @@
-package com.example.cloryse.taxirapid.Models;
+package com.example.cloryse.taxirapid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
