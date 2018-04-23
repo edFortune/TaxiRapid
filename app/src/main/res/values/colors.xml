@@ -7,4 +7,9 @@
     <color name="white">#FFFFFF</color>f7b731
     <color name="transparent">#00000000</color>
     <color name="textColor">#6e6e6e</color>
+    <color name="graylight">#fafafa</color>
+    <color name="startblue">#09c6df</color>
+    <color name="endblue">#0bcce6</color>
+
+
 </resources>
