@@ -9,6 +9,7 @@
 
 
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -24,34 +25,17 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="10dp"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/facebook_icon"
-                    android:tint="@color/white" />
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="10dp"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/google_icon"
-                    android:tint="@color/white" />
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/circle"
-                    android:padding="10dp"
-                    android:src="@drawable/twitter_icon"
-                    android:tint="@color/white" />
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/circle_img"
+                        android:src="@drawable/taxi_icon"
+                        android:padding="10dp"
+                        android:tint="@color/white" />
                 </LinearLayout>
 
                 <TextView
@@ -72,37 +56,55 @@
                 android:layout_height="20dp"
                 android:layout_below="@+id/linearLayout1"
                 android:layout_centerHorizontal="true"
+                android:background="@drawable/square_layout"
                 android:layout_marginTop="-10dp"
-                android:rotation="45"
-                android:src="@drawable/square" />
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imageView1"
-                android:layout_marginLeft="35dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Or Be Classical"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_centerHorizontal="true"/>
-            </RelativeLayout>
+                android:rotation="45" />
 
 
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
             <RelativeLayout
                 android:id="@+id/relativeLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayout"
+                android:layout_below="@+id/imageView1"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="70dp">
+
+                <ImageView
+                    android:id="@+id/imgView_emailIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:src="@drawable/mail_img"
+                    android:tint="@color/white" />
+
+                <EditText
+                    android:id="@+id/editTxt_mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/imgView_emailIcon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/imgView_emailIcon"
+                    android:background="@color/editTextBG"
+                    android:hint="Email"
+                    android:paddingLeft="20dp"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relativeLayout3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp">
 
                 <ImageView
                     android:id="@+id/imgView_userIcon"
@@ -110,7 +112,7 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimary"
                     android:padding="8dp"
-                    android:src="@drawable/img_user"
+                    android:src="@drawable/password_img"
                     android:tint="@color/white" />
 
                 <EditText
@@ -120,7 +122,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_toRightOf="@+id/imgView_userIcon"
                     android:background="@color/editTextBG"
-                    android:hint="Name"
+                    android:hint="Confirm Password"
                     android:paddingLeft="20dp"
                     android:textSize="15sp" />
 
@@ -128,7 +130,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/relativeLayout2"
+                android:id="@+id/relativeLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/relativeLayout1"
@@ -142,7 +144,7 @@
                     android:layout_height="40dp"
                     android:background="@color/colorPrimary"
                     android:padding="8dp"
-                    android:src="@drawable/img_authentication"
+                    android:src="@drawable/password_img"
                     android:tint="@color/white" />
 
                 <EditText
@@ -160,37 +162,7 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/relativeLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/relativeLayout2"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="15dp">
 
-                <ImageView
-                    android:id="@+id/imgView_emailIcon"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@color/colorPrimary"
-                    android:padding="8dp"
-                    android:src="@drawable/img_email"
-                    android:tint="@color/white" />
-
-                <EditText
-                    android:id="@+id/editTxt_mail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/imgView_emailIcon"
-                    android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@+id/imgView_emailIcon"
-                    android:background="@color/editTextBG"
-                    android:hint="Email"
-                    android:paddingLeft="20dp"
-                    android:textSize="15sp" />
-
-            </RelativeLayout>
 
             <Button
                 android:id="@+id/btn_signUp"
@@ -202,10 +174,10 @@
                 android:background="@color/colorPrimary"
                 android:fontFamily="sans-serif-medium"
                 android:text="SIGN UP"
-                android:textColor="@color/white"
-                android:onClick="startSignUp"/>
+                android:textColor="@color/white" />
 
             <Button
+                android:id="@+id/bt_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/btn_signUp"
@@ -218,6 +190,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/textColor"
                 android:textSize="13sp" />
+            </ScrollView>
 
         </RelativeLayout>
 
