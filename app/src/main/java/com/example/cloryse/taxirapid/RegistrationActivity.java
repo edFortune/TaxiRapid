@@ -12,7 +12,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.cloryse.taxirapid.Models.ChauffeurInfo;
+import com.example.cloryse.taxirapid.Models.ClientInfo;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.net.URL;
+import java.util.ArrayList;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -33,6 +40,10 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText prenomEdit;
     private EditText plaqueEdit;
     private  EditText marqueEdit;
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseFirestore mFirestore;
 
 
     @Override
@@ -104,7 +115,16 @@ public class RegistrationActivity extends AppCompatActivity {
         String plaque_immatriculation = plaqueEdit.getText().toString();
         String marque_vehicule = marqueEdit.getText().toString();
 
+        ClientInfo clientInfo = new ClientInfo(nom, prenom);
+        ChauffeurInfo chauffeurInfo = new ChauffeurInfo(nom, prenom, plaque_immatriculation, marque_vehicule);
 
+        mFirestore = FirebaseFirestore.getInstance();
+        DocumentReference newDataRef = mFirestore.collection(USER_MODE).document();
+
+        if(USER_MODE.equals("CLIENT"))
+            newDataRef.set(clientInfo);
+        else if(USER_MODE.equals("CHAUFFEUR"))
+            newDataRef.set(chauffeurInfo);
 
         Toast.makeText(this, "Validation", Toast.LENGTH_SHORT).show();
 
