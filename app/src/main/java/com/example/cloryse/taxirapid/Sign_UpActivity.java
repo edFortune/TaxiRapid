@@ -78,10 +78,7 @@ public class  Sign_UpActivity extends AppCompatActivity {
             return;
         }
 
-        if (passwd == passwd_2) {
-            mPassword2.setError("This password doesn't match to the first");
-            return;
-        }
+
 
             mAuth.createUserWithEmailAndPassword(email, passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -94,7 +91,6 @@ public class  Sign_UpActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(Sign_UpActivity.this, "Not Sign Up", Toast.LENGTH_SHORT).show();
                     }
-
 
                 }
             });
