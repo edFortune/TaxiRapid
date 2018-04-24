@@ -37,22 +37,26 @@
             android:weightSum="2">
 
             <Button
+                android:id="@+id/bouton_client"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Client"
                 android:layout_weight="1"
                 android:textColor="#fff"
                 android:background="@color/colorPrimary"
-                android:layout_margin="5dp"/>
+                android:layout_margin="5dp"
+                android:onClick="onClientClick"/>
 
             <Button
+                android:id="@+id/bouton_chauffeur"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chauffeur"
                 android:layout_margin="5dp"
                 android:textColor="#fff"
                 android:background="@color/colorPrimary"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:onClick="onChauffeurClick"/>
 
         </LinearLayout>
 
@@ -69,10 +73,12 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/img_view"
                         android:layout_width="match_parent"
                         android:layout_height="200dp" />
 
                     <Button
+                        android:id="@+id/buton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="#fff"
@@ -91,6 +97,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/editTextNom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -104,6 +111,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/editTextPrenom"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -112,10 +120,12 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_plaque"
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/editTextImma"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -124,11 +134,13 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                android:id="@+id/card_matricule"
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/editTextMArque"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
@@ -137,6 +149,7 @@
             </android.support.v7.widget.CardView>
 
             <Button
+                android:id="@+id/buttonValider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Valider"
