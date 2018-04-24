@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".MainActivity" >
+        <activity android:name=".RegistrationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
 
 
        <activity android:name=".Sign_UpActivity"/>
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".ProfileActivity"></activity>
     </application>
 

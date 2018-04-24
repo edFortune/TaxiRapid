@@ -27,6 +27,13 @@ public class RegistrationActivity extends AppCompatActivity {
     private CardView card_plaque;
     private CardView card_matricule;
 
+    private String USER_MODE = "CLIENT";
+
+    private EditText nomEdit;
+    private EditText prenomEdit;
+    private EditText plaqueEdit;
+    private  EditText marqueEdit;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,7 @@ public class RegistrationActivity extends AppCompatActivity {
         card_plaque = (CardView)findViewById(R.id.card_plaque);
         card_matricule = (CardView)findViewById(R.id.card_matricule);
 
+
         imageView = (ImageView)findViewById(R.id.img_view);
         buton = (Button)findViewById(R.id.buton);
 
@@ -49,6 +57,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
             }
         });
+
+        nomEdit = findViewById(R.id.editTextNom);
+        prenomEdit= findViewById(R.id.editTextPrenom);
+        plaqueEdit =findViewById(R.id.editTextImma);
+        marqueEdit =findViewById(R.id.editTextMArque);
 
 
     }
@@ -66,6 +79,7 @@ public class RegistrationActivity extends AppCompatActivity {
             imageUri = data.getData();
             imageView.setImageURI(imageUri);
 
+
         }
     }
 
@@ -73,11 +87,30 @@ public class RegistrationActivity extends AppCompatActivity {
         card_plaque.setVisibility(View.GONE);
         card_matricule.setVisibility(View.GONE);
         //Toast.makeText(this, "Client", Toast.LENGTH_SHORT).show();
+        USER_MODE = "CLIENT";
     }
 
     public void onChauffeurClick(View view) {
         card_plaque.setVisibility(View.VISIBLE);
         card_matricule.setVisibility(View.VISIBLE);
         Toast.makeText(this, "Chauffeur", Toast.LENGTH_SHORT).show();
+        USER_MODE = "CHAUFFEUR";
+    }
+
+
+    public void clickvalidation(View view) {
+        String nom = nomEdit.getText().toString();
+        String prenom = prenomEdit.getText().toString();
+        String plaque_immatriculation = plaqueEdit.getText().toString();
+        String marque_vehicule = marqueEdit.getText().toString();
+
+
+
+        Toast.makeText(this, "Validation", Toast.LENGTH_SHORT).show();
+
+        nomEdit.setText("");
+        prenomEdit.setText("");
+        plaqueEdit.setText("");
+        marqueEdit.setText("");
     }
 }
