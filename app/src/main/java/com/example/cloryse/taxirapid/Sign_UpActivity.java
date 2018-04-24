@@ -32,6 +32,7 @@ public class  Sign_UpActivity extends AppCompatActivity {
 
         mEmail = findViewById(R.id.editTxt_mail);
         mPassword = findViewById(R.id.editTxt_passwd);
+        mPassword2 = findViewById(R.id.password_confirm);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -93,14 +94,16 @@ public class  Sign_UpActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(Sign_UpActivity.this, "Not Sign Up", Toast.LENGTH_SHORT).show();
                     }
+
+
                 }
             });
-        
-
 
     }
+
     public void startLoginActivity(View view) {
         Intent intent = new Intent(Sign_UpActivity.this, LoginActivity.class);
         startActivity(intent);
     }
+
 }

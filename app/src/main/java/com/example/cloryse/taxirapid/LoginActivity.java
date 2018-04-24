@@ -57,6 +57,8 @@ public class LoginActivity extends AppCompatActivity {
                     // The user has not logged in
                 }else{
                     // The user has logged in
+                    startActivity(new Intent(LoginActivity.this, MapActivity.class));
+                    finish();
                 }
             }
         };

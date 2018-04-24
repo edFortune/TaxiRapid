@@ -1,6 +1,7 @@
 package com.example.cloryse.taxirapid;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -52,6 +53,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -77,6 +79,7 @@ public class MapActivity extends AppCompatActivity
     private PlaceInfo mPlace;
     private Marker mMarker;
 
+    private FirebaseAuth mFirebaseAuth;
 
     //
     private Boolean mLocationPermissionGranted = false;
@@ -111,6 +114,7 @@ public class MapActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        mFirebaseAuth = FirebaseAuth.getInstance();
         //
         mSearhcText = findViewById(R.id.input_search);
         mGps = findViewById(R.id.ic_gps);
@@ -361,7 +365,9 @@ public class MapActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-
+            mFirebaseAuth.signOut();
+            startActivity(new Intent(MapActivity.this, LoginActivity.class));
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
