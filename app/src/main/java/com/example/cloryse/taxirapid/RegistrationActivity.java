@@ -58,6 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     protected void onActivityResult(int requestcode, int resultcode , Intent data){
         super.onActivityResult(requestcode,resultcode ,data);
@@ -66,12 +67,12 @@ public class RegistrationActivity extends AppCompatActivity {
             imageView.setImageURI(imageUri);
 
         }
-
     }
+
     public void onClientClick(View view) {
         card_plaque.setVisibility(View.GONE);
         card_matricule.setVisibility(View.GONE);
-        Toast.makeText(this, "Client", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Client", Toast.LENGTH_SHORT).show();
     }
 
     public void onChauffeurClick(View view) {
