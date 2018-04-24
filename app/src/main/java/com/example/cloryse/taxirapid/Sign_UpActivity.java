@@ -21,6 +21,7 @@ public class  Sign_UpActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private EditText mEmail;
     private EditText mPassword;
+    private EditText mPassword2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,31 +65,42 @@ public class  Sign_UpActivity extends AppCompatActivity {
     public void startSignUp(View view) {
         String email = mEmail.getText().toString();
         String passwd = mPassword.getText().toString();
+        String passwd_2 = mPassword2.getText().toString();
 
-        if(email.isEmpty() || passwd.isEmpty()){
+        if (email.isEmpty() || passwd.isEmpty()) {
             mEmail.setError("Enter an email");
             return;
         }
 
-        if(passwd.isEmpty()){
+        if (passwd.isEmpty()) {
             mPassword.setError("Enter a password");
             return;
         }
 
-        mAuth.createUserWithEmailAndPassword(email, passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Intent intent = new Intent(Sign_UpActivity.this, RegistrationActivity.class);
-                    startActivity(intent);
-                    Toast.makeText(Sign_UpActivity.this, "Sign Up", Toast.LENGTH_SHORT).show();
+        if (passwd == passwd_2) {
+            mPassword2.setError("This password doesn't match to the first");
+            return;
+        }
 
-                }else {
-                    Toast.makeText(Sign_UpActivity.this, "Not Sign Up", Toast.LENGTH_SHORT).show();
+            mAuth.createUserWithEmailAndPassword(email, passwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Intent intent = new Intent(Sign_UpActivity.this, RegistrationActivity.class);
+                        startActivity(intent);
+                        Toast.makeText(Sign_UpActivity.this, "Sign Up", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Toast.makeText(Sign_UpActivity.this, "Not Sign Up", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
+        
+
+
     }
-
-
+    public void startLoginActivity(View view) {
+        Intent intent = new Intent(Sign_UpActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
 }

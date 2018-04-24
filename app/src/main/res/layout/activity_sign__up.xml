@@ -61,9 +61,7 @@
                 android:rotation="45" />
 
 
-            <ScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+
             <RelativeLayout
                 android:id="@+id/relativeLayout1"
                 android:layout_width="match_parent"
@@ -116,6 +114,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/password_confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_userIcon"
@@ -123,6 +122,7 @@
                     android:layout_toRightOf="@+id/imgView_userIcon"
                     android:background="@color/editTextBG"
                     android:hint="Confirm Password"
+                    android:inputType="textPassword"
                     android:paddingLeft="20dp"
                     android:textSize="15sp" />
 
@@ -174,7 +174,8 @@
                 android:background="@color/colorPrimary"
                 android:fontFamily="sans-serif-medium"
                 android:text="SIGN UP"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:onClick="startSignUp"/>
 
             <Button
                 android:id="@+id/bt_login"
@@ -189,8 +190,9 @@
                 android:text="Already a member? Login Here"
                 android:textAllCaps="false"
                 android:textColor="@color/textColor"
-                android:textSize="13sp" />
-            </ScrollView>
+                android:textSize="13sp"
+                android:onClick="startLoginActivity"/>
+
 
         </RelativeLayout>
 

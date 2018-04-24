@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "383014943041-b3ff7ugdlsop9ps5orl7821d29tkbbba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cloryse.taxirapid",
+            "certificate_hash": "eada7a0cb08e276b0f11f9b87bc257b374de6216"
+          }
+        },
+        {
           "client_id": "383014943041-utjvhr437h43evhk4homtnkmt0m6cd9p.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
