@@ -126,13 +126,13 @@ public class RegistrationActivity extends AppCompatActivity {
         else if(USER_MODE.equals("CHAUFFEUR"))
             newDataRef.set(chauffeurInfo);
 
-        Toast.makeText(this, "Validation", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Register", Toast.LENGTH_SHORT).show();
 
         nomEdit.setText("");
         prenomEdit.setText("");
         plaqueEdit.setText("");
         marqueEdit.setText("");
 
-        startActivity(new Intent(RegistrationActivity.this, MapActivity.class));
+        /*startActivity(new Intent(RegistrationActivity.this, MapActivity.class));*/
     }
 }

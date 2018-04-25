@@ -2,51 +2,51 @@ package com.example.cloryse.taxirapid.Models;
 
 public class ChauffeurInfo {
 
-    private String nom;
-    private String prenom;
-    private String plaqueImmatriculation;
-    private String marqueVoiture;
+    private String Last_name;
+    private String First_name;
+    private String Brand_Vehicle;
+    private String Numberplate;
 
     public ChauffeurInfo(){
 
     }
 
     public ChauffeurInfo(String nom, String prenom, String plaqueImmatriculation, String marqueVoiture) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.plaqueImmatriculation = plaqueImmatriculation;
-        this.marqueVoiture = marqueVoiture;
+        this.Last_name= nom;
+        this.First_name= prenom;
+        this.Numberplate = plaqueImmatriculation;
+        this.Brand_Vehicle= marqueVoiture;
     }
 
     public String getNom() {
-        return nom;
+        return Last_name;
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        this.Last_name = nom;
     }
 
     public String getPrenom() {
-        return prenom;
+        return First_name;
     }
 
     public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        this.First_name = prenom;
     }
 
     public String getPlaqueImmatriculation() {
-        return plaqueImmatriculation;
+        return Numberplate;
     }
 
     public void setPlaqueImmatriculation(String plaqueImmatriculation) {
-        this.plaqueImmatriculation = plaqueImmatriculation;
+        this.Numberplate= plaqueImmatriculation;
     }
 
     public String getMarqueVoiture() {
-        return marqueVoiture;
+        return Brand_Vehicle;
     }
 
     public void setMarqueVoiture(String marqueVoiture) {
-        this.marqueVoiture = marqueVoiture;
+        this.Brand_Vehicle = marqueVoiture;
     }
 }
