@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -43,6 +44,8 @@ public class  Sign_UpActivity extends AppCompatActivity {
                     // The user has not logged in
                 }else{
                     // The user has logged in
+                    //startActivity(new Intent(Sign_UpActivity.this, RegistrationActivity.class));
+
                 }
             }
         };
@@ -68,7 +71,7 @@ public class  Sign_UpActivity extends AppCompatActivity {
         String passwd = mPassword.getText().toString();
         String passwd_2 = mPassword2.getText().toString();
 
-        if (email.isEmpty() || passwd.isEmpty()) {
+        if (email.isEmpty()) {
             mEmail.setError("Enter an email");
             return;
         }
@@ -90,6 +93,7 @@ public class  Sign_UpActivity extends AppCompatActivity {
 
                     } else {
                         Toast.makeText(Sign_UpActivity.this, "Not Sign Up", Toast.LENGTH_SHORT).show();
+                        Log.e("createUser", task.getException() + "");
                     }
 
                 }
