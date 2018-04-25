@@ -44,7 +44,7 @@ public class  Sign_UpActivity extends AppCompatActivity {
                     // The user has not logged in
                 }else{
                     // The user has logged in
-                    //startActivity(new Intent(Sign_UpActivity.this, RegistrationActivity.class));
+                    startActivity(new Intent(Sign_UpActivity.this, RegistrationActivity.class));
 
                 }
             }
