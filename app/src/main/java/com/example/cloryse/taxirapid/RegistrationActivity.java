@@ -133,6 +133,6 @@ public class RegistrationActivity extends AppCompatActivity {
         plaqueEdit.setText("");
         marqueEdit.setText("");
 
-        /*startActivity(new Intent(RegistrationActivity.this, MapActivity.class));*/
+        startActivity(new Intent(RegistrationActivity.this, MapActivity.class));
     }
 }

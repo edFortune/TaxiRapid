@@ -25,6 +25,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
     private GoogleApiClient mGoogleApiClient;
     private static final String EMAIL = "email";
+    private boolean isGmailExist = true;
 
 
     @Override
@@ -53,12 +55,20 @@ public class LoginActivity extends AppCompatActivity {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser() == null){
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user == null){
                     // The user has not logged in
                 }else{
                     // The user has logged in
-                    startActivity(new Intent(LoginActivity.this, MapActivity.class));
-                    finish();
+                    if(isGmailExist){
+                        startActivity(new Intent(LoginActivity.this, MapActivity.class));
+                        finish();
+                    }else {
+                        startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
+                        finish();
+                    }
+
+
                 }
             }
         };
@@ -122,9 +132,43 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount account) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
 
+        isGmailExist = checkifEmailExist(account.getEmail());
+        onSignInWithCredential(account);
+
+
+    }
+
+    private boolean checkifEmailExist(final String email){
+
+        final boolean[] emailExist = {false};
+        mAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+            @Override
+            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+
+                if(task.isSuccessful()){
+                    ///////// getProviders().size() will return size 1. if email ID is available.
+                    int isExist = task.getResult().getSignInMethods().size();
+                    if(isExist == 1){
+                        Toast.makeText(LoginActivity.this, "Email exist", Toast.LENGTH_SHORT).show();
+                        emailExist[0] = true;
+                    }
+                    else{
+                        Toast.makeText(LoginActivity.this, "Email not exist", Toast.LENGTH_SHORT).show();
+                        //onSignInWithCredential(account);
+                    }
+                }
+            }
+        });
+
+        if(emailExist[0])
+            return true;
+        return false;
+    }
+
+    private void onSignInWithCredential(GoogleSignInAccount account){
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -135,6 +179,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());

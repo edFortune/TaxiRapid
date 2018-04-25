@@ -21,18 +21,19 @@
             android:value="@string/google_maps_API_key"/>
 
 
-        <activity android:name=".RegistrationActivity" >
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegistrationActivity" />
 
 
        <activity android:name=".Sign_UpActivity"/>
         <activity android:name=".MainActivity" />
+        <activity android:name=".MapActivity" />
         <activity android:name=".ProfileActivity"></activity>
     </application>
 
